@@ -24,9 +24,7 @@ body {
 
 /* ---------- Header ------------- */
 header {
-  position: absolute;
-  top: 0;
-  background: none;
+  background: black;
   width: 100%;
 }
 
@@ -81,7 +79,12 @@ header > .container {
 }
 
 /* ---------- Main ------------- */
+main {
+  border: none;
+}
+
 #block-one {
+  border: none;
   background-color: black;
   height: 100dvh;
   background-image: url("../images/block_one-footer-bg.jpg");
@@ -91,10 +94,12 @@ header > .container {
   gap: 26px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 #block-one img {
-  max-width: 100%;
+  width: 280px;
+}
+#block-one img:not(:first-child) {
+  width: 350px;
 }
 #block-one p {
   color: white;
@@ -102,6 +107,15 @@ header > .container {
   line-height: 1;
   font-weight: 800;
   margin: 0;
+}
+#one-p-1 {
+  font-size: 48px;
+}
+#one-p-2 {
+  font-size: 20px;
+}
+#block-one > div {
+  padding-top: 30px;
 }
 #block-one button {
   background-color: var(--main-orange);
