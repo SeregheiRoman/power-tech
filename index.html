@@ -11,7 +11,10 @@
   <body>
     <header>
       <div class="container">
-        <button id="burger">
+        <button
+          id="burger"
+          onclick="document.getElementById('burger-menu').classList.add('visible');"
+        >
           <svg
             width="18"
             height="14"
@@ -41,22 +44,36 @@
           </svg>
           <p id="cart-count">0</p>
         </button>
+        <div
+          id="burger-menu"
+          onclick="document.getElementById('burger-menu').classList.remove('visible');"
+        >
+          <ul id="burger-ul">
+            <li><a href=""> МАГАЗИН </a></li>
+            <li><a href=""> СТАТЬИ</a></li>
+            <li><a href=""> ДОКУМЕНТЫ </a></li>
+            <li><a href=""> О НАС </a></li>
+            <li><a href=""> КОНТАКТЫ </a></li>
+          </ul>
+        </div>
       </div>
     </header>
     <main>
-      <div id="block-one" class="container">
-        <img
-          src="./images/logo-full.svg"
-          alt="PowerTech премиальное топливо при каждой заправке"
-        />
-        <img src="./images/block-one-img.png" alt="" />
-        <div>
-          <p id="one-p-1">Присадка</p>
-          <p id="one-p-2">Многофункциональная</p>
+      <div id="block-one">
+        <div class="container">
+          <img
+            src="./images/logo-full.svg"
+            alt="PowerTech премиальное топливо при каждой заправке"
+          />
+          <img src="./images/block-one-img.png" alt="" />
+          <div>
+            <p id="one-p-1">Присадка</p>
+            <p id="one-p-2">Многофункциональная</p>
+          </div>
+          <a href="#">
+            <button>В магазин</button>
+          </a>
         </div>
-        <a href="#">
-          <button>В магазин</button>
-        </a>
       </div>
     </main>
     <footer></footer>

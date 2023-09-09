@@ -12,9 +12,15 @@
 * {
   font-family: Montserrat;
 }
-
 * button {
   cursor: pointer;
+}
+* li {
+  list-style: none;
+}
+* a {
+  text-decoration: unset;
+  color: unset;
 }
 
 body {
@@ -24,12 +30,15 @@ body {
 
 /* ---------- Header ------------- */
 header {
-  background: black;
+  background: none;
+  position: absolute;
   width: 100%;
 }
 
 header > .container {
   /* display: none; */
+  /* position: absolute; */
+  z-index: 1;
   top: 0;
   right: 0;
   left: 0;
@@ -38,6 +47,7 @@ header > .container {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 #burger {
@@ -78,22 +88,55 @@ header > .container {
   margin: 0;
 }
 
-/* ---------- Main ------------- */
-main {
-  border: none;
+#burger-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100dvh;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.75);
+  transition: 0.5s;
+  /* background-color: red; */
+}
+.visible {
+  display: unset !important;
+}
+#burger-ul {
+  background-color: white;
+  padding-left: 0;
+  height: 100dvh;
+  margin-block: 0;
+}
+#burger-ul li {
+  font-size: 13px;
+  padding-left: 20px;
+  padding-block: 20px;
+  /* border-bottom: 1px solid rgba(0, 0, 0, 0.11); */
+  font-weight: 600;
+  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
+}
+#burger-ul:first-child {
+  padding-top: 20px;
 }
 
+/* ---------- Main ------------- */
+
 #block-one {
-  border: none;
   background-color: black;
   height: 100dvh;
   background-image: url("../images/block_one-footer-bg.jpg");
   background-size: cover;
   background-position: bottom;
+  position: relative;
+}
+#block-one .container {
   display: flex;
   gap: 26px;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
+  height: 100%;
 }
 #block-one img {
   width: 280px;
@@ -115,7 +158,7 @@ main {
   font-size: 20px;
 }
 #block-one > div {
-  padding-top: 30px;
+  /* padding-top: 30px; */
 }
 #block-one button {
   background-color: var(--main-orange);
@@ -127,4 +170,10 @@ main {
   border: none;
   width: 200px;
   height: 45px;
+}
+
+@media (min-width: 678px) {
+  #burger-ul {
+    max-width: 400px;
+  }
 }
