@@ -158,7 +158,7 @@ header > .container {
   font-size: 20px;
 }
 #block-one > div {
-  /* padding-top: 30px; */
+  padding-top: 15px;
 }
 #block-one button {
   background-color: var(--main-orange);
