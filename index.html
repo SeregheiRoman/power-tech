@@ -13,7 +13,7 @@
       <div class="container">
         <button
           id="burger"
-          onclick="document.getElementById('burger-menu').classList.add('visible');"
+          onclick="document.getElementById('burger-menu').classList.add('header-menu-visible');"
         >
           <svg
             width="18"
@@ -29,7 +29,11 @@
           </svg>
           Меню
         </button>
-        <button id="cart">
+
+        <button
+          id="cart"
+          onclick="document.getElementById('cart-menu').classList.add('header-menu-visible');"
+        >
           <svg
             width="20"
             height="19"
@@ -46,15 +50,41 @@
         </button>
         <div
           id="burger-menu"
-          onclick="document.getElementById('burger-menu').classList.remove('visible');"
+          class="header-menu"
+          onclick="document.getElementById('burger-menu').classList.remove('header-menu-visible');"
         >
-          <ul id="burger-ul">
-            <li><a href=""> МАГАЗИН </a></li>
+          <ul class="menu-content" id="burger-ul">
+            <li class="menu-first-child"><a href=""> МАГАЗИН </a></li>
             <li><a href=""> СТАТЬИ</a></li>
             <li><a href=""> ДОКУМЕНТЫ </a></li>
             <li><a href=""> О НАС </a></li>
             <li><a href=""> КОНТАКТЫ </a></li>
           </ul>
+        </div>
+        <div id="cart-menu" class="header-menu">
+          <div class="menu-content">
+            <div id="cart-menu-header" class="container">
+              <button style="font-size: 20px; font-weight: 500">Корзина</button>
+              <button
+                style="font-size: 15px; font-weight: 500"
+                onclick="document.getElementById('cart-menu').classList.remove('header-menu-visible');"
+              >
+                Закрыть
+              </button>
+            </div>
+            <div id="empty-cart">
+              <p style="font-size: 15px; text-transform: uppercase">
+                Корзина пуста
+              </p>
+              <button
+                class="main-btn"
+                style="padding-inline: 14px"
+                onclick="document.getElementById('cart-menu').classList.remove('header-menu-visible');"
+              >
+                <a href="#">Вернуться в магазин</a>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
@@ -71,7 +101,7 @@
             <p id="one-p-2">Многофункциональная</p>
           </div>
           <a href="#">
-            <button>В магазин</button>
+            <button class="main-btn">В магазин</button>
           </a>
         </div>
       </div>

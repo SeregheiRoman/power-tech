@@ -9,11 +9,26 @@
   margin-inline: auto;
 }
 
+.main-btn {
+  background-color: var(--main-orange);
+  border-radius: 35px;
+  color: white;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 800;
+  border: none;
+  padding: 15px 60px;
+}
+
 * {
   font-family: Montserrat;
+  font-weight: 600;
+  box-sizing: border-box;
 }
 * button {
   cursor: pointer;
+  background: none;
+  border: none;
 }
 * li {
   list-style: none;
@@ -88,36 +103,73 @@ header > .container {
   margin: 0;
 }
 
-#burger-menu {
+.header-menu {
   position: fixed;
   top: 0;
-  left: 0;
   width: 100vw;
   height: 100dvh;
-  display: none;
   background-color: rgba(0, 0, 0, 0.75);
   transition: 0.5s;
+}
+
+#burger-menu {
+  left: 0;
+  /* display: none; */
+  transform: translateX(-100vw);
   /* background-color: red; */
 }
-.visible {
-  display: unset !important;
+#cart-menu {
+  right: 0;
+  transform: translateX(100vw);
 }
-#burger-ul {
+
+.header-menu-visible {
+  /* display: unset !important; */
+  transform: translateX(0vw) !important;
+}
+.menu-content {
   background-color: white;
-  padding-left: 0;
-  height: 100dvh;
+  padding-inline: 0;
+  height: 100%;
+  width: 100%;
   margin-block: 0;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 }
-#burger-ul li {
+.menu-content li,
+#cart-menu-header {
+  width: 100%;
   font-size: 13px;
   padding-left: 20px;
   padding-block: 20px;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.11); */
-  font-weight: 600;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
 }
-#burger-ul:first-child {
-  padding-top: 20px;
+#burger-ul li:first-child {
+  padding-top: 40px !important;
+}
+
+#burger-cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+#cart-menu-header {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-block: 20px;
+}
+
+#empty-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 /* ---------- Main ------------- */
@@ -157,23 +209,12 @@ header > .container {
 #one-p-2 {
   font-size: 20px;
 }
-#block-one > div {
-  padding-top: 15px;
-}
-#block-one button {
-  background-color: var(--main-orange);
-  border-radius: 9999px;
-  color: white;
-  text-transform: uppercase;
-  font-size: 15px;
-  font-weight: 800;
-  border: none;
-  width: 200px;
-  height: 45px;
+#block-one > .container > img {
+  margin-top: 15px;
 }
 
 @media (min-width: 678px) {
-  #burger-ul {
+  .header-menu {
     max-width: 400px;
   }
 }
