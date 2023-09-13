@@ -149,22 +149,23 @@ header > .container {
   height: 100dvh;
   background-color: rgba(0, 0, 0, 0.75);
   transition: 0.5s;
+  display: flex;
 }
 
 #burger-menu {
-  left: 0;
+  right: 0;
   /* display: none; */
   transform: translateX(-100vw);
-  /* background-color: red; */
+  justify-content: start;
 }
 #cart-menu {
   right: 0;
   transform: translateX(100vw);
+  justify-content: end;
 }
 
 .header-menu-visible {
-  /* display: unset !important; */
-  transform: translateX(0vw) !important;
+  transform: unset !important;
 }
 .menu-content {
   background-color: white;
@@ -189,12 +190,6 @@ header > .container {
   padding-top: 40px !important;
 }
 
-#burger-cart {
-  position: fixed;
-  top: 0;
-  right: 0;
-}
-
 #cart-menu-header {
   display: flex;
   align-items: center;
@@ -212,9 +207,6 @@ header > .container {
 }
 
 /* ---------- Main ------------- */
-
-main {
-}
 
 #block-one {
   background-color: black;
@@ -277,7 +269,7 @@ main {
 }
 
 @media (min-width: 678px) {
-  .header-menu {
+  .menu-content {
     max-width: 400px;
   }
 }
