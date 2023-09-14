@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --main-orange: #f08122;
   --cart-green: #1c5e1b;
@@ -58,10 +62,10 @@
   margin: 0;
 }
 h1 {
-  font-size: 48px;
+  font-size: 7.25vw;
 }
 h2 {
-  font-size: 20px;
+  font-size: 3vw;
 }
 h4 {
   font-size: 32px;
@@ -170,7 +174,7 @@ header > .container {
 .menu-content {
   background-color: white;
   padding-inline: 0;
-  height: 100%;
+  height: 100dvh;
   width: 100%;
   margin-block: 0;
   align-items: center;
@@ -208,9 +212,18 @@ header > .container {
 
 /* ---------- Main ------------- */
 
+main p {
+  color: #777;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.6;
+}
+
 #block-one {
   background-color: black;
-  height: 100dvh;
+  height: 100vh;
   background-image: url("../images/block_one-footer-bg.jpg");
   background-size: cover;
   background-position: bottom;
@@ -226,14 +239,17 @@ header > .container {
   height: 100%;
 }
 #block-one img {
-  width: 280px;
+  width: 50vmin;
 }
 #block-one img:not(:first-child) {
-  width: 350px;
+  width: 60vmin;
 }
 
 #block-one > .container > img {
-  margin-top: 15px;
+  margin-top: 20px;
+}
+#block-one .main-btn {
+  font-size: 3vw;
 }
 
 .arrow-image {
@@ -261,15 +277,128 @@ header > .container {
   text-transform: uppercase;
 }
 
+#block-four {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
 #block-four img {
   /* margin-left: 10px !important; */
-  width: 236px;
+  min-width: 236px;
+  width: 100%;
   padding: 9px;
   border-radius: 32px;
 }
 
+#block-five .main-btn,
+#block-six .main-btn {
+  font-size: 30px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+#block-five .main-btn {
+  font-weight: 500;
+}
+#block-six .main-btn {
+  font-weight: 800;
+}
+
+.documentation-imgs {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.documentation-imgs div {
+  background: #403838;
+  width: 100%;
+  min-height: 300px;
+  /* aspect-ratio: 1 / 1.41; */
+}
+
+/* ------ Footer ------- */
+footer {
+  background-image: url("../images/block_one-footer-bg.jpg");
+  background-size: cover;
+  background-position: bottom;
+  min-height: 300px;
+}
+
+/*  */
+/*  */
+/*  */
+/*  */
 @media (min-width: 678px) {
   .menu-content {
     max-width: 400px;
+  }
+
+  #cart svg,
+  #burger svg {
+    width: 30px;
+    height: 30px;
+  }
+  #burger {
+    font-size: 20px;
+  }
+  #cart-count {
+    font-size: 16px;
+    padding-top: 2px;
+    height: 20px;
+    width: 20px;
+  }
+}
+@media (min-width: 768px) {
+  #block-four img {
+    padding: unset;
+  }
+  #block-two .container {
+    /* display: flex; */
+    flex-direction: row;
+  }
+}
+@media (max-width: 767px) {
+  #block-four {
+    padding-inline: unset;
+  }
+}
+
+@media (min-width: 1024px) {
+  .documentation-imgs {
+    display: flex;
+    justify-content: space-between;
+  }
+  #block-one .main-btn {
+    font-size: 30px;
+  }
+  h1 {
+    font-size: 75px;
+  }
+  h2 {
+    font-size: 31px;
+  }
+  h3 {
+    font-size: 30px;
+  }
+  main p {
+    font-size: 20px;
+  }
+  .secondary-btn {
+    font-size: 18px;
+  }
+  h4 {
+    font-size: 40px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  .arrow-image button {
+    height: 80px;
+    width: 80px;
+  }
+  .arrow-image button svg {
+    height: 30px;
+    width: 30px;
   }
 }
