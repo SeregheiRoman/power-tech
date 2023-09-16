@@ -5,6 +5,11 @@ html {
 :root {
   --main-orange: #f08122;
   --cart-green: #1c5e1b;
+  --gray-light: #c9c9c9;
+  --main-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  --menu-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
+  --gray-px-line: 1px solid var(--gray-light);
+  --transparent-black: rgba(0, 0, 0, 0.75);
 }
 
 .container {
@@ -27,6 +32,11 @@ html {
   font-weight: 800;
   border: none;
   padding: 15px 60px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.main-btn:hover {
+  box-shadow: var(--main-shadow);
 }
 
 .iframe {
@@ -151,25 +161,25 @@ header > .container {
   top: 0;
   width: 100vw;
   height: 100dvh;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: var(--transparent-black);
   transition: 0.5s;
   display: flex;
 }
 
 #burger-menu {
-  right: 0;
+  left: 0;
   /* display: none; */
-  transform: translateX(-100vw);
+  transform: translateX(-100%);
   justify-content: start;
 }
 #cart-menu {
   right: 0;
-  transform: translateX(100vw);
+  transform: translateX(100%);
   justify-content: end;
 }
 
 .header-menu-visible {
-  transform: unset !important;
+  transform: translateX(0%) !important;
 }
 .menu-content {
   background-color: white;
@@ -188,7 +198,7 @@ header > .container {
   padding-left: 20px;
   padding-block: 20px;
   /* border-bottom: 1px solid rgba(0, 0, 0, 0.11); */
-  box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--menu-shadow);
 }
 #burger-ul li:first-child {
   padding-top: 40px !important;
@@ -212,7 +222,15 @@ header > .container {
 
 /* ---------- Main ------------- */
 
-main p {
+main {
+  position: relative;
+  background-color: white;
+}
+
+main p,
+form label,
+form option,
+form select {
   color: #777;
   font-size: 14px;
   font-style: normal;
@@ -223,7 +241,7 @@ main p {
 
 #block-one {
   background-color: black;
-  height: 100vh;
+  height: 100svh;
   background-image: url('../images/block_one-footer-bg.jpg');
   background-size: cover;
   background-position: bottom;
@@ -297,7 +315,7 @@ main p {
 #block-five .main-btn,
 #block-six .main-btn {
   font-size: 30px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--main-shadow);
 }
 #block-five .main-btn {
   font-weight: 500;
@@ -319,6 +337,80 @@ main p {
   /* aspect-ratio: 1 / 1.41; */
 }
 
+#form {
+  position: fixed;
+  height: 100svh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--transparent-black);
+  transition: 0.5s;
+  top: 0;
+  z-index: -10;
+  opacity: 0;
+}
+#close {
+  position: absolute;
+  padding: 5px;
+  height: 45px;
+  top: 10px;
+  right: 16px;
+}
+form {
+  position: relative;
+}
+form fieldset {
+  border-radius: 38px;
+  box-shadow: var(--main-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: none;
+  padding: 35px 25px 30px 25px;
+  gap: 10px;
+  background-color: white;
+}
+form input:not(:last-child) {
+  border-radius: 27px;
+  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+  box-shadow: var(--main-shadow);
+  border: none;
+  font-size: 24px;
+  height: 58px;
+  padding: 19px;
+  padding-bottom: 10px;
+}
+form input::placeholder {
+  border-bottom: var(--gray-px-line);
+  /* margin-inline: 19px; */
+}
+form input:focus-visible,
+#engine:focus-visible {
+  outline: var(--gray-px-line);
+}
+#engine {
+  width: 170px;
+  height: 38px;
+
+  padding-left: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align-last: left;
+
+  border: var(--gray-px-line);
+  background: url('../images/select-arrow.png') no-repeat;
+  background-position: center right 12px;
+  appearance: none;
+}
+#engine option {
+  text-align: start;
+}
+.form-visible {
+  z-index: 10 !important;
+  opacity: 1 !important;
+}
 /* ------ Footer ------- */
 footer {
   background-image: url('../images/block_one-footer-bg.jpg');
@@ -351,6 +443,7 @@ footer {
     width: 20px;
   }
 }
+
 @media (min-width: 768px) {
   #block-four img {
     padding: unset;
