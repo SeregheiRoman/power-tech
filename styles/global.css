@@ -224,7 +224,7 @@ main p {
 #block-one {
   background-color: black;
   height: 100vh;
-  background-image: url("../images/block_one-footer-bg.jpg");
+  background-image: url('../images/block_one-footer-bg.jpg');
   background-size: cover;
   background-position: bottom;
   position: relative;
@@ -321,7 +321,7 @@ main p {
 
 /* ------ Footer ------- */
 footer {
-  background-image: url("../images/block_one-footer-bg.jpg");
+  background-image: url('../images/block_one-footer-bg.jpg');
   background-size: cover;
   background-position: bottom;
   min-height: 300px;
